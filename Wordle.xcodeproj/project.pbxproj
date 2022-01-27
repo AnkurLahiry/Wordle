@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		9247C86B279BDE56007889AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C86A279BDE56007889AB /* AppDelegate.swift */; };
 		9247C86D279BDE56007889AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C86C279BDE56007889AB /* SceneDelegate.swift */; };
-		9247C86F279BDE56007889AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C86E279BDE56007889AB /* ViewController.swift */; };
 		9247C872279BDE56007889AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9247C870279BDE56007889AB /* Main.storyboard */; };
 		9247C874279BDE59007889AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9247C873279BDE59007889AB /* Assets.xcassets */; };
 		9247C877279BDE59007889AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9247C875279BDE59007889AB /* LaunchScreen.storyboard */; };
+		9247C87F279BDF06007889AB /* StarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C87E279BDF06007889AB /* StarterViewController.swift */; };
+		9247C881279BE04B007889AB /* WordleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C880279BE04B007889AB /* WordleTableViewController.swift */; };
+		9247C883279BE081007889AB /* WordleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C882279BE081007889AB /* WordleTableViewCell.swift */; };
+		9247C885279BE0A6007889AB /* WordleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9247C884279BE0A6007889AB /* WordleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9247C867279BDE56007889AB /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9247C86A279BDE56007889AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9247C86C279BDE56007889AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9247C86E279BDE56007889AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9247C871279BDE56007889AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9247C873279BDE59007889AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9247C876279BDE59007889AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9247C878279BDE59007889AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9247C87E279BDF06007889AB /* StarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewController.swift; sourceTree = "<group>"; };
+		9247C880279BE04B007889AB /* WordleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleTableViewController.swift; sourceTree = "<group>"; };
+		9247C882279BE081007889AB /* WordleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleTableViewCell.swift; sourceTree = "<group>"; };
+		9247C884279BE0A6007889AB /* WordleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				9247C86A279BDE56007889AB /* AppDelegate.swift */,
 				9247C86C279BDE56007889AB /* SceneDelegate.swift */,
-				9247C86E279BDE56007889AB /* ViewController.swift */,
+				9247C882279BE081007889AB /* WordleTableViewCell.swift */,
+				9247C884279BE0A6007889AB /* WordleTableViewCell.xib */,
+				9247C880279BE04B007889AB /* WordleTableViewController.swift */,
+				9247C87E279BDF06007889AB /* StarterViewController.swift */,
 				9247C870279BDE56007889AB /* Main.storyboard */,
 				9247C873279BDE59007889AB /* Assets.xcassets */,
 				9247C875279BDE59007889AB /* LaunchScreen.storyboard */,
@@ -125,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9247C885279BE0A6007889AB /* WordleTableViewCell.xib in Resources */,
 				9247C877279BDE59007889AB /* LaunchScreen.storyboard in Resources */,
 				9247C874279BDE59007889AB /* Assets.xcassets in Resources */,
 				9247C872279BDE56007889AB /* Main.storyboard in Resources */,
@@ -138,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9247C86F279BDE56007889AB /* ViewController.swift in Sources */,
 				9247C86B279BDE56007889AB /* AppDelegate.swift in Sources */,
+				9247C87F279BDF06007889AB /* StarterViewController.swift in Sources */,
+				9247C881279BE04B007889AB /* WordleTableViewController.swift in Sources */,
 				9247C86D279BDE56007889AB /* SceneDelegate.swift in Sources */,
+				9247C883279BE081007889AB /* WordleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +307,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,8 +337,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

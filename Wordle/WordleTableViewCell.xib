@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="146" id="ScQ-TE-rRt" customClass="WordleTableViewCell" customModule="Wordle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="546" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ScQ-TE-rRt" id="yKv-Rh-UfB">
+                <rect key="frame" x="0.0" y="0.0" width="546" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-Kf-Gm2">
+                        <rect key="frame" x="32" y="8" width="482" height="130"/>
+                    </stackView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OMK-u8-tuN">
+                        <rect key="frame" x="0.0" y="0.0" width="546" height="146"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="textFieldDidChangeEditing:" destination="ScQ-TE-rRt" eventType="editingChanged" id="WLP-o9-sWb"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bSE-Kf-Gm2" firstAttribute="top" secondItem="yKv-Rh-UfB" secondAttribute="top" constant="8" id="GNg-fR-Svo"/>
+                    <constraint firstItem="OMK-u8-tuN" firstAttribute="top" secondItem="yKv-Rh-UfB" secondAttribute="top" id="GeA-FW-B8X"/>
+                    <constraint firstAttribute="bottom" secondItem="bSE-Kf-Gm2" secondAttribute="bottom" constant="8" id="PK1-wn-QAB"/>
+                    <constraint firstAttribute="trailing" secondItem="bSE-Kf-Gm2" secondAttribute="trailing" constant="32" id="PUu-3I-TrI"/>
+                    <constraint firstItem="bSE-Kf-Gm2" firstAttribute="leading" secondItem="yKv-Rh-UfB" secondAttribute="leading" constant="32" id="Xlp-Nx-4tb"/>
+                    <constraint firstItem="OMK-u8-tuN" firstAttribute="leading" secondItem="yKv-Rh-UfB" secondAttribute="leading" id="a1U-U0-0FM"/>
+                    <constraint firstAttribute="trailing" secondItem="OMK-u8-tuN" secondAttribute="trailing" id="cfY-wP-DHO"/>
+                    <constraint firstAttribute="bottom" secondItem="OMK-u8-tuN" secondAttribute="bottom" id="djX-Eu-4Tr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="stackview" destination="bSE-Kf-Gm2" id="FNH-9E-1cH"/>
+                <outlet property="textField" destination="OMK-u8-tuN" id="cny-uy-kta"/>
+            </connections>
+            <point key="canvasLocation" x="462.31884057971018" y="-156.02678571428569"/>
+        </tableViewCell>
+    </objects>
+</document>
