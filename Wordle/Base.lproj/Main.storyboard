@@ -31,7 +31,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
-                                            <segue destination="8de-r0-Rwl" kind="show" id="xxD-i1-bXL"/>
+                                            <action selector="startTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGa-si-84k"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -45,6 +45,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xbu-sK-azt"/>
+                    <connections>
+                        <segue destination="8de-r0-Rwl" kind="show" identifier="segueToMainGame" id="w1p-Gn-252"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,8 @@
 		9247C881279BE04B007889AB /* WordleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C880279BE04B007889AB /* WordleTableViewController.swift */; };
 		9247C883279BE081007889AB /* WordleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9247C882279BE081007889AB /* WordleTableViewCell.swift */; };
 		9247C885279BE0A6007889AB /* WordleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9247C884279BE0A6007889AB /* WordleTableViewCell.xib */; };
+		92B0886227A2F85500CD4F85 /* WordleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0886127A2F85500CD4F85 /* WordleViewModel.swift */; };
+		92B0886427A2FEC700CD4F85 /* WordleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0886327A2FEC700CD4F85 /* WordleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		9247C880279BE04B007889AB /* WordleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleTableViewController.swift; sourceTree = "<group>"; };
 		9247C882279BE081007889AB /* WordleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleTableViewCell.swift; sourceTree = "<group>"; };
 		9247C884279BE0A6007889AB /* WordleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordleTableViewCell.xib; sourceTree = "<group>"; };
+		92B0886127A2F85500CD4F85 /* WordleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleViewModel.swift; sourceTree = "<group>"; };
+		92B0886327A2FEC700CD4F85 /* WordleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,9 @@
 				9247C882279BE081007889AB /* WordleTableViewCell.swift */,
 				9247C884279BE0A6007889AB /* WordleTableViewCell.xib */,
 				9247C880279BE04B007889AB /* WordleTableViewController.swift */,
+				92B0886127A2F85500CD4F85 /* WordleViewModel.swift */,
 				9247C87E279BDF06007889AB /* StarterViewController.swift */,
+				92B0886327A2FEC700CD4F85 /* WordleManager.swift */,
 				9247C870279BDE56007889AB /* Main.storyboard */,
 				9247C873279BDE59007889AB /* Assets.xcassets */,
 				9247C875279BDE59007889AB /* LaunchScreen.storyboard */,
@@ -153,6 +159,8 @@
 				9247C881279BE04B007889AB /* WordleTableViewController.swift in Sources */,
 				9247C86D279BDE56007889AB /* SceneDelegate.swift in Sources */,
 				9247C883279BE081007889AB /* WordleTableViewCell.swift in Sources */,
+				92B0886427A2FEC700CD4F85 /* WordleManager.swift in Sources */,
+				92B0886227A2F85500CD4F85 /* WordleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 import UIKit
 
 class WordleTableViewController: UITableViewController {
+    
+    var viewModel: WordleViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,10 @@ class WordleTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WordleTableViewCell.cellIdentifier, for: indexPath) as? WordleTableViewCell else {
             return UITableViewCell()
         }
-        cell.viewModel = "Hello"
+        cell.callback.didFillup = { text in 
+            let array = self.viewModel.compare(with: text)
+            cell.updateView(with: array)
+        }
         return cell
     }
     

@@ -50,15 +50,13 @@ class WordleTableViewCell: UITableViewCell {
         }
     }
     
-    var viewModel: String? {
-        didSet {
-            guard let viewModel = viewModel else {
-                return
+    func updateView(with array: [Color]) {
+        for (index, element) in array.enumerated() {
+            if let label = stackview.arrangedSubviews[index] as? AppLabel {
+                label.flip(color: element)
             }
-            
         }
     }
-    
 }
 
 extension WordleTableViewCell: UITextFieldDelegate {
@@ -94,5 +92,13 @@ class AppLabel: UILabel {
         layer.borderColor = UIColor.secondaryLabel.cgColor
         layer.borderWidth = 1.0
         layer.cornerRadius = 5.0
+    }
+    
+    func flip(color: Color) {
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        UIView.transition(with: self, duration: 0.5, options: transitionOptions, animations: {
+            self.backgroundColor = color.color
+            self.textColor = .white
+        })
     }
 }
