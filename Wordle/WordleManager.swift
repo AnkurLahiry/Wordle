@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+enum WordleError: Error {
+    case wordNotFound
+}
+
 class WordleManager {
     static let shared = WordleManager()
     private var words: [String] = [String]()
@@ -20,21 +24,31 @@ class WordleManager {
             guard let path = Bundle.main.path(forResource: "Wordlist", ofType: "txt") else { return }
             guard let string = try? String(contentsOfFile: path, encoding: String.Encoding.utf8) else { return }
             self.words = string.components(separatedBy: .whitespacesAndNewlines).filter({$0.count == 5})
+            self.words = self.words.map({ word in
+                word.uppercased()
+            })
         }
     }
     
-    func selectRandomWord() {
+    func selectRandomWord(completion: @escaping (Bool) -> Void) {
         guard let random = words.randomElement() else {
+            completion(false)
             return
         }
-        print(random)
-        self.selectedWord = random
+        self.selectedWord = random.uppercased()
+        print(self.selectedWord)
+        completion(true)
     }
     
-    func compare(with words: String) -> [Color] {
-        var result: [Color] = Array(repeating: .black, count: words.count)
+    func compare(with givenWord: String) throws -> [Color] {
+        var result: [Color] = Array(repeating: .black, count: givenWord.count)
+        guard !selectedWord.isEmpty else { return result }
+        guard words.contains(givenWord) else {
+            throw WordleError.wordNotFound
+        }
+        
         let selectedWordArray = Array(selectedWord)
-        for (index, word) in words.enumerated() {
+        for (index, word) in givenWord.enumerated() {
             if word == selectedWordArray[index] {
                 result[index] = .green
                 continue

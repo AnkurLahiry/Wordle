@@ -32,7 +32,8 @@ class WordleTableViewCell: UITableViewCell {
     var callback = Callback()
     
     @IBAction func textFieldDidChangeEditing(_ sender: UITextField) {
-        guard let text = sender.text else { return }
+        guard let text = sender.text, text.count <= count else { return }
+        stackview.arrangedSubviews.forEach({($0 as? AppLabel)?.text = nil})
         for (index, char) in text.enumerated() {
             (stackview.arrangedSubviews[index] as? AppLabel)?.text = String(char).capitalized
         }
@@ -57,16 +58,24 @@ class WordleTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    func executeWrongWord() {
+        self.textField.isEnabled = true
+        for case let view in stackview.arrangedSubviews where view is AppLabel {
+            view.shake()
+        }
+    }
 }
 
 extension WordleTableViewCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard string.isEmpty else { return true }
         let allowedCharacter = CharacterSet.letters
         let characterSet = CharacterSet(charactersIn: string)
         if !allowedCharacter.isSuperset(of: characterSet) {
             return false
         }
-        return true
+        return range.location < 5
     }
 }
 
@@ -100,5 +109,23 @@ class AppLabel: UILabel {
             self.backgroundColor = color.color
             self.textColor = .white
         })
+    }
+    
+    func shakeAnimation() {
+        self.shake()
+    }
+}
+
+extension UIView {
+    func shake(for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
+        let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
+            self.transform = CGAffineTransform(translationX: translation, y: 0)
+        }
+
+        propertyAnimator.addAnimations({
+            self.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, delayFactor: 0.2)
+
+        propertyAnimator.startAnimation()
     }
 }

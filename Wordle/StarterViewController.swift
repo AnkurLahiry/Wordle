@@ -17,11 +17,25 @@ class StarterViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        WordleManager.shared.selectRandomWord()
+        
+    }
+    
+    func showPrepareAlert() {
+        let alertController = UIAlertController(title: "Please wait!", message: "Please wait sometimes to generate a random word for you", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func startTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueToMainGame", sender: self)
+        WordleManager.shared.selectRandomWord(completion: { success in
+            if success {
+                self.performSegue(withIdentifier: "segueToMainGame", sender: self)
+            } else {
+                self.showPrepareAlert()
+            }
+        })
+        
     }
     
     

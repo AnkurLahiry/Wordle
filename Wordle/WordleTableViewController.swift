@@ -18,6 +18,13 @@ class WordleTableViewController: UITableViewController {
         tableView.rowHeight = 80
         tableView.register(UINib(nibName: WordleTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: WordleTableViewCell.cellIdentifier)
     }
+    
+    func showEndAlert() {
+        let alertController = UIAlertController(title: "Your word!", message: WordleManager.shared.selectedWord, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
 
@@ -30,9 +37,18 @@ class WordleTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WordleTableViewCell.cellIdentifier, for: indexPath) as? WordleTableViewCell else {
             return UITableViewCell()
         }
-        cell.callback.didFillup = { text in 
-            let array = self.viewModel.compare(with: text)
-            cell.updateView(with: array)
+        cell.callback.didFillup = { text in
+            do {
+                let array = try self.viewModel.compare(with: text)
+                self.viewModel.count += 1
+                cell.updateView(with: array)
+                
+                if self.viewModel.count == 6 {
+                    self.showEndAlert()
+                }
+            } catch {
+                cell.executeWrongWord()
+            }
         }
         return cell
     }
