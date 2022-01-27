@@ -10,14 +10,25 @@ import UIKit
 
 class WordleManager {
     static let shared = WordleManager()
-    
-    private let words: [String] = [String]()
-    private(set) var selectedWord: String = "Hello".uppercased()
+    private var words: [String] = [String]()
+    private(set) var selectedWord: String = ""
     
     private init() { }
     
     func fetchWords() {
-        // fetch words ....
+        DispatchQueue.global(qos: .background).async {
+            guard let path = Bundle.main.path(forResource: "Wordlist", ofType: "txt") else { return }
+            guard let string = try? String(contentsOfFile: path, encoding: String.Encoding.utf8) else { return }
+            self.words = string.components(separatedBy: .whitespacesAndNewlines).filter({$0.count == 5})
+        }
+    }
+    
+    func selectRandomWord() {
+        guard let random = words.randomElement() else {
+            return
+        }
+        print(random)
+        self.selectedWord = random
     }
     
     func compare(with words: String) -> [Color] {

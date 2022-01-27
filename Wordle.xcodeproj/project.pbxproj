@@ -18,6 +18,7 @@
 		9247C885279BE0A6007889AB /* WordleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9247C884279BE0A6007889AB /* WordleTableViewCell.xib */; };
 		92B0886227A2F85500CD4F85 /* WordleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0886127A2F85500CD4F85 /* WordleViewModel.swift */; };
 		92B0886427A2FEC700CD4F85 /* WordleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0886327A2FEC700CD4F85 /* WordleManager.swift */; };
+		92B0886627A307CD00CD4F85 /* Wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92B0886527A307CD00CD4F85 /* Wordlist.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9247C884279BE0A6007889AB /* WordleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordleTableViewCell.xib; sourceTree = "<group>"; };
 		92B0886127A2F85500CD4F85 /* WordleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleViewModel.swift; sourceTree = "<group>"; };
 		92B0886327A2FEC700CD4F85 /* WordleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleManager.swift; sourceTree = "<group>"; };
+		92B0886527A307CD00CD4F85 /* Wordlist.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Wordlist.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				9247C873279BDE59007889AB /* Assets.xcassets */,
 				9247C875279BDE59007889AB /* LaunchScreen.storyboard */,
 				9247C878279BDE59007889AB /* Info.plist */,
+				92B0886527A307CD00CD4F85 /* Wordlist.txt */,
 			);
 			path = Wordle;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				9247C885279BE0A6007889AB /* WordleTableViewCell.xib in Resources */,
 				9247C877279BDE59007889AB /* LaunchScreen.storyboard in Resources */,
+				92B0886627A307CD00CD4F85 /* Wordlist.txt in Resources */,
 				9247C874279BDE59007889AB /* Assets.xcassets in Resources */,
 				9247C872279BDE56007889AB /* Main.storyboard in Resources */,
 			);
