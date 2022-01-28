@@ -15,7 +15,7 @@ class WordleTableViewCell: UITableViewCell {
         var didFillup: (String) -> Void = { _ in }
     }
     
-    @IBOutlet weak var textField: UITextField! {
+    @IBOutlet weak var textField: AppTextField! {
         didSet {
             textField.delegate = self
         }
@@ -79,9 +79,17 @@ extension WordleTableViewCell: UITextFieldDelegate {
     }
 }
 
-extension UITextField {
-    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        return false
+class AppTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        false
+    }
+
+    override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
+        []
+    }
+
+    override func caretRect(for position: UITextPosition) -> CGRect {
+        .null
     }
 }
 
@@ -121,11 +129,11 @@ extension UIView {
         let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
             self.transform = CGAffineTransform(translationX: translation, y: 0)
         }
-
+        
         propertyAnimator.addAnimations({
             self.transform = CGAffineTransform(translationX: 0, y: 0)
         }, delayFactor: 0.2)
-
+        
         propertyAnimator.startAnimation()
     }
 }
